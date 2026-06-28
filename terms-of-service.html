@@ -4,14 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ViviTap – Terms of Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; color: #111827; background: #f9fafb; line-height: 1.7; }
+    body { font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; color: #111827; background: #f9fafb; line-height: 1.7; }
     .container { max-width: 800px; margin: 0 auto; padding: 48px 24px; background: #fff; }
-    header { border-bottom: 2px solid #2563EB; padding-bottom: 24px; margin-bottom: 40px; }
-    header h1 { font-size: 2rem; color: #2563EB; margin-bottom: 8px; }
+    header { border-bottom: 2px solid #3E6192; padding-bottom: 24px; margin-bottom: 24px; }
+    header h1 { font-size: 2rem; color: #3E6192; margin-bottom: 8px; }
     header p { color: #6B7280; font-size: 0.9rem; }
-    h2 { font-size: 1.3rem; color: #111827; margin: 36px 0 12px; border-left: 4px solid #2563EB; padding-left: 12px; }
+    h2 { font-size: 1.3rem; color: #111827; margin: 36px 0 12px; border-left: 4px solid #3E6192; padding-left: 12px; }
     h3 { font-size: 1.05rem; color: #374151; margin: 24px 0 8px; }
     p { margin-bottom: 12px; }
     ul { margin: 8px 0 12px 24px; }
@@ -19,114 +21,276 @@
     .warning { background: #FEF3C7; border-left: 4px solid #F59E0B; padding: 12px 16px; border-radius: 4px; margin: 16px 0; }
     .contact-box { background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 8px; padding: 16px; margin-top: 32px; }
     footer { text-align: center; color: #9CA3AF; font-size: 0.8rem; margin-top: 48px; padding-top: 24px; border-top: 1px solid #E5E7EB; }
-    a { color: #2563EB; }
-    nav { margin-bottom: 32px; }
+    a { color: #3E6192; }
+    nav { margin-bottom: 24px; }
     nav a { margin-right: 16px; font-size: 0.9rem; }
+    .lang-switcher { display: flex; gap: 8px; margin-bottom: 32px; }
+    .lang-btn { padding: 6px 16px; border: 1.5px solid #3E6192; border-radius: 20px; background: #fff; color: #3E6192; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .lang-btn.active { background: #3E6192; color: #fff; }
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
   </style>
 </head>
 <body>
 <div class="container">
   <header>
-    <h1>ViviTap – Terms of Service</h1>
-    <p>Last updated: June 2026</p>
+    <h1 id="header-title">ViviTap – Terms of Service</h1>
+    <p id="header-date">Last updated: June 2026</p>
   </header>
 
   <nav>
     <a href="index.html">← Home</a>
-    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="privacy-policy.html" id="nav-pp">Privacy Policy</a>
     <a href="impressum.html">Impressum</a>
   </nav>
 
-  <h2>1. Acceptance of Terms</h2>
-  <p>By downloading, installing, or using ViviTap ("the App"), you agree to be bound by these Terms of Service. If you do not agree, do not use the App.</p>
-  <p>These Terms constitute a legally binding agreement between you and Muny Roth CHEV ("we", "us", "our"), the operator of ViviTap.</p>
-
-  <h2>2. Description of the App</h2>
-  <p>ViviTap is a <strong>supplementary</strong> communication assistance application that enables people with communication disabilities ("helpees") to communicate with caregivers and family members ("helpers") using pre-defined and customizable message buttons, voice output, and real-time audio/video calls.</p>
-
-  <h2>3. Important Limitation of Liability</h2>
-  <div class="warning">
-    ⚠️ ViviTap is NOT a medical device, NOT an emergency service, and NOT a safety system.
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" onclick="setLang('de')">DE</button>
   </div>
-  <p>ViviTap is a supplementary communication tool. It must NOT be used as:</p>
-  <ul>
-    <li>A substitute for emergency services (call <strong>112</strong> in the EU for emergencies)</li>
-    <li>A medical or therapeutic device</li>
-    <li>The sole means of communication in life-threatening situations</li>
-  </ul>
-  <p><strong>Users are advised to maintain alternative means of communication at all times (phone calls, SMS, WhatsApp, or physical presence).</strong></p>
-  <p>Call and notification delivery depends on device settings, operating system restrictions, battery optimization settings, and network conditions beyond ViviTap's control. Android and device manufacturer restrictions (lockscreen, background process limitations, battery optimization) may affect the delivery of calls and notifications. ViviTap cannot be held responsible for limitations imposed by the Android operating system, Google, or device manufacturers.</p>
-  <p>We expressly disclaim all liability for any harm, injury, loss, or damage arising from:</p>
-  <ul>
-    <li>Failure to deliver messages or notifications due to device or OS restrictions</li>
-    <li>App unavailability or technical failures</li>
-    <li>Reliance on the App as a primary safety or emergency tool</li>
-    <li>Network connectivity issues beyond our control</li>
-    <li>User device settings that restrict background activity or notifications</li>
-  </ul>
-  <p>To the maximum extent permitted by applicable law, our total liability for indirect, incidental, or consequential damages shall not exceed the amount you paid us in the 12 months preceding the claim. <strong>Nothing in these Terms limits our liability for death or personal injury caused by negligence, for fraud or fraudulent misrepresentation, or for any other liability that cannot be excluded or limited under applicable law (including §§ 307, 309 BGB).</strong></p>
 
-  <h2>4. Eligibility</h2>
-  <p>You must be at least 16 years old to create an account. If you are under 16, a parent or legal guardian must create and manage the account with their explicit consent.</p>
+  <!-- ══ ENGLISH ══ -->
+  <div id="content-en" class="lang-content active">
+    <h2>1. Acceptance of Terms</h2>
+    <p>By downloading, installing, or using ViviTap ("the App"), you agree to be bound by these Terms of Service. If you do not agree, do not use the App.</p>
+    <p>These Terms constitute a legally binding agreement between you and Muny Roth CHEV ("we", "us", "our"), the operator of ViviTap.</p>
 
-  <h2>5. User Accounts</h2>
-  <ul>
-    <li>You are responsible for maintaining the confidentiality of your account credentials</li>
-    <li>You are responsible for all activity under your account</li>
-    <li>You must provide accurate information at registration</li>
-    <li>You may not create accounts for others without their consent</li>
-    <li>You may not use the App for any unlawful purpose</li>
-  </ul>
+    <h2>2. Description of the App</h2>
+    <p>ViviTap is a <strong>supplementary</strong> communication assistance application that enables people with communication disabilities ("helpees") to communicate with caregivers and family members ("helpers") using pre-defined and customizable message buttons, voice output, and real-time audio/video calls.</p>
 
-  <h2>6. User Content</h2>
-  <p>You may upload images as profile photos or custom button images. You are solely responsible for the content you upload. You agree not to upload content that is illegal, offensive, violent, sexually explicit, or harmful.</p>
-  <p>We reserve the right to remove content and terminate accounts that violate these Terms. You can report inappropriate content via <strong>Settings → Security → Report Content</strong>.</p>
+    <h2>3. Important Limitation of Liability</h2>
+    <div class="warning">⚠️ ViviTap is NOT a medical device, NOT an emergency service, and NOT a safety system.</div>
+    <p>ViviTap is a supplementary communication tool. It must NOT be used as a substitute for emergency services, a medical or therapeutic device, or the sole means of communication in life-threatening situations.</p>
+    <p><strong>In an emergency, call your local emergency number (112 in Europe).</strong></p>
+    <p><strong>Users are advised to maintain alternative means of communication at all times.</strong></p>
+    <p>We expressly disclaim all liability for harm arising from: failure to deliver messages due to device/OS restrictions, app unavailability, reliance on the App as a primary safety tool, or network issues beyond our control.</p>
+    <p>To the maximum extent permitted by applicable law, our total liability for indirect, incidental, or consequential damages shall not exceed the amount you paid us in the 12 months preceding the claim. <strong>Nothing in these Terms limits our liability for death or personal injury caused by negligence, for fraud, or for any liability that cannot be excluded under applicable law (including §§ 307, 309 BGB).</strong></p>
 
-  <h2>7. Subscriptions and Payments</h2>
-  <h3>7.1 Plans</h3>
-  <ul>
-    <li><strong>Free:</strong> basic communication features with usage limits</li>
-    <li><strong>Family (€5.00/month):</strong> extended contacts, buttons, and call minutes</li>
-    <li><strong>Pro (€10.00/month):</strong> maximum limits for professional caregivers</li>
-  </ul>
-  <h3>7.2 Promotional Access</h3>
-  <p>We may, at our sole discretion, offer promotional access, free trials, or discounted plans to selected individuals or organizations. Such offers are subject to specific terms communicated at the time of the offer and may be withdrawn at any time.</p>
-  <h3>7.3 Billing</h3>
-  <p>Subscriptions are billed monthly through Google Play, processed by Google LLC. Subscription management is handled by RevenueCat Inc. on our behalf.</p>
-  <h3>7.4 Cancellation</h3>
-  <p>You may cancel at any time through Google Play settings. No refunds for partial billing periods except as required by law.</p>
-  <h3>7.5 Right of Withdrawal (EU Consumers)</h3>
-  <p>EU consumers have a 14-day right of withdrawal from the date of initial purchase. By confirming your subscription and requesting immediate access to premium features, you expressly request that performance of the service begins immediately, and you acknowledge that you lose your right of withdrawal once the service has commenced, in accordance with Art. 16(m) of Directive 2011/83/EU. This waiver is recorded at the time of purchase via Google Play's checkout confirmation.</p>
+    <h2>4. Eligibility</h2>
+    <p>You must be at least 16 years old to create an account. If you are under 16, a parent or legal guardian must create and manage the account with their explicit consent.</p>
 
-  <h2>8. Acceptable Use</h2>
-  <p>You agree not to:</p>
-  <ul>
-    <li>Use the App to harass, harm, or abuse others</li>
-    <li>Attempt to gain unauthorized access to other accounts or systems</li>
-    <li>Reverse engineer, decompile, or modify the App</li>
-    <li>Transmit unlawful, offensive, or harmful content</li>
-  </ul>
+    <h2>5. User Accounts</h2>
+    <ul>
+      <li>You are responsible for maintaining the confidentiality of your account credentials</li>
+      <li>You are responsible for all activity under your account</li>
+      <li>You must provide accurate information at registration</li>
+      <li>You may not create accounts for others without their consent</li>
+      <li>You may not use the App for any unlawful purpose</li>
+    </ul>
+    <h3>5.1 Connections</h3>
+    <p>To connect with another user, you must send a connection request. The recipient will see your username and may accept or decline. A connection is only established upon explicit acceptance. You may not send repeated connection requests to users who have declined your request.</p>
 
-  <h2>9. Intellectual Property</h2>
-  <p>All content and functionality of ViviTap are the exclusive property of Muny Roth CHEV. You are granted a limited, non-exclusive, non-transferable license to use the App for its intended communication assistance purposes.</p>
+    <h2>6. User Content</h2>
+    <p>You may upload images as profile photos or as icons for custom communication buttons, and you may add web links (URLs) to custom buttons. You are solely responsible for all content you upload and all links you add. You agree not to upload or link to content that is illegal, offensive, violent, sexually explicit, or harmful.</p>
+    <p>ViviTap is not responsible for the content of external websites accessed through links added to custom buttons. Users access such websites at their own risk.</p>
+    <p>You can report inappropriate content via <strong>Settings → Security → Report Content</strong>.</p>
 
-  <h2>10. Termination</h2>
-  <p>We may suspend or terminate your account for violations of these Terms, with prior notice where reasonably possible. You may delete your account at any time via <strong>Settings → Security → Delete Account</strong>.</p>
+    <h2>7. Subscriptions and Payments</h2>
+    <h3>7.1 Plans</h3>
+    <ul>
+      <li><strong>Free:</strong> 2 contacts, 5 custom buttons, 20 notifications/day</li>
+      <li><strong>Family (€5.99/month or €64.99/year):</strong> 6 contacts, 30 custom buttons, folders, web links, 30 notifications/hour</li>
+      <li><strong>Pro (€11.99/month or €129.99/year):</strong> 12 contacts, 80 custom buttons, folders, web links, 50 notifications/hour</li>
+    </ul>
+    <h3>7.2 Promotional Access</h3>
+    <p>We may offer promotional access or foundation codes to selected individuals or organizations. Such offers may be withdrawn at any time.</p>
+    <h3>7.3 Billing</h3>
+    <p>Subscriptions are billed monthly through Google Play (Google LLC). Subscription management is handled by RevenueCat Inc. on our behalf.</p>
+    <h3>7.4 Cancellation</h3>
+    <p>You may cancel at any time through Google Play settings. No refunds for partial billing periods except as required by law.</p>
+    <h3>7.5 Right of Withdrawal (EU Consumers)</h3>
+    <p>EU consumers have a 14-day right of withdrawal. By confirming your subscription and requesting immediate access, you acknowledge that you lose your right of withdrawal once the service has commenced (Art. 16(m) Directive 2011/83/EU).</p>
 
-  <h2>11. Governing Law</h2>
-  <p>These Terms are governed by the laws of the Federal Republic of Germany. Disputes shall be subject to the jurisdiction of the courts of Stuttgart, Germany, unless mandatory consumer protection law of your country of residence provides otherwise.</p>
+    <h2>8. Acceptable Use</h2>
+    <p>You agree not to: harass, harm, or abuse others; gain unauthorized access to accounts or systems; reverse engineer or modify the App; transmit unlawful or harmful content.</p>
 
-  <h2>12. Changes to Terms</h2>
-  <p>We may update these Terms from time to time. If we make material changes, we will notify you within the App at least 30 days before the changes take effect. Your continued use of the App after the effective date constitutes acceptance of the updated Terms. If you do not agree to the updated Terms, you must stop using the App and may delete your account before the effective date.</p>
+    <h2>9. Intellectual Property</h2>
+    <p>All content and functionality of ViviTap are the exclusive property of Muny Roth CHEV. You are granted a limited, non-exclusive, non-transferable license to use the App for its intended communication assistance purposes.</p>
 
-  <div class="contact-box">
-    <strong>Contact</strong><br>
-    Muny Roth CHEV<br>
-    Büsnauer Platz 1, Stuttgart, Germany<br>
-    <a href="mailto:contact@munyroth.com">contact@munyroth.com</a>
+    <h2>10. Termination</h2>
+    <p>We may suspend or terminate your account for violations of these Terms, with prior notice where reasonably possible. You may delete your account at any time via <strong>Settings → Security → Delete Account</strong>.</p>
+
+    <h2>11. Governing Law</h2>
+    <p>These Terms are governed by the laws of the Federal Republic of Germany. Disputes shall be subject to the jurisdiction of the courts of Stuttgart, Germany, unless mandatory consumer protection law of your country of residence provides otherwise.</p>
+
+    <h2>12. Changes to Terms</h2>
+    <p>If we make material changes, we will notify you within the App at least 30 days before the changes take effect. If you do not agree, you must stop using the App and may delete your account before the effective date.</p>
+
+    <div class="contact-box">
+      <strong>Contact</strong><br>
+      Muny Roth CHEV<br>c/o MDC#1006, Welserstraße 3, 87463 Dietmannsried, Germany<br>
+      <a href="mailto:contact@munyroth.com">contact@munyroth.com</a>
+    </div>
+  </div>
+
+  <!-- ══ FRANÇAIS ══ -->
+  <div id="content-fr" class="lang-content">
+    <h2>1. Acceptation des conditions</h2>
+    <p>En téléchargeant, installant ou utilisant ViviTap ("l'Application"), vous acceptez d'être lié par ces Conditions Générales d'Utilisation. Si vous n'acceptez pas, n'utilisez pas l'Application.</p>
+    <p>Ces CGU constituent un accord juridiquement contraignant entre vous et Muny Roth CHEV ("nous"), l'opérateur de ViviTap.</p>
+
+    <h2>2. Description de l'application</h2>
+    <p>ViviTap est un outil de communication <strong>complémentaire</strong> permettant aux personnes ayant des difficultés de communication ("aidés") de communiquer avec leurs aidants et proches ("helpers") via des boutons de messages prédéfinis et personnalisables, une sortie vocale, et des appels audio/vidéo en temps réel.</p>
+
+    <h2>3. Limitation de responsabilité</h2>
+    <div class="warning">⚠️ ViviTap N'EST PAS un dispositif médical, N'EST PAS un service d'urgence, et N'EST PAS un système de sécurité.</div>
+    <p>ViviTap est un outil complémentaire. Il NE DOIT PAS être utilisé comme substitut aux services d'urgence, comme dispositif médical ou thérapeutique, ou comme unique moyen de communication en situation d'urgence.</p>
+    <p><strong>En cas d'urgence, appelez le numéro d'urgence local (112 en Europe).</strong></p>
+    <p><strong>Les utilisateurs sont invités à maintenir des moyens de communication alternatifs à tout moment.</strong></p>
+    <p>Nous déclinons toute responsabilité pour les dommages résultant de : l'échec de livraison des messages dû aux restrictions des appareils/OS, l'indisponibilité de l'application, l'utilisation de l'application comme outil de sécurité principal, ou des problèmes réseau hors de notre contrôle.</p>
+    <p>Dans les limites du droit applicable, notre responsabilité totale pour les dommages indirects ne dépassera pas le montant que vous nous avez payé au cours des 12 mois précédant la réclamation. <strong>Rien dans ces CGU ne limite notre responsabilité en cas de décès ou de dommage corporel causé par négligence, de fraude, ou pour toute responsabilité ne pouvant être exclue par la loi applicable (notamment §§ 307, 309 BGB).</strong></p>
+
+    <h2>4. Éligibilité</h2>
+    <p>Vous devez avoir au moins 16 ans pour créer un compte. Si vous avez moins de 16 ans, un parent ou tuteur légal doit créer et gérer le compte avec son consentement explicite.</p>
+
+    <h2>5. Comptes utilisateurs</h2>
+    <ul>
+      <li>Vous êtes responsable de la confidentialité de vos identifiants</li>
+      <li>Vous êtes responsable de toute activité sous votre compte</li>
+      <li>Vous devez fournir des informations exactes à l'inscription</li>
+      <li>Vous ne pouvez pas créer de comptes pour d'autres sans leur consentement</li>
+      <li>Vous ne pouvez pas utiliser l'Application à des fins illicites</li>
+    </ul>
+    <h3>5.1 Connexions</h3>
+    <p>Pour vous connecter à un autre utilisateur, vous devez envoyer une demande de connexion. Le destinataire verra votre identifiant et pourra accepter ou refuser. La connexion n'est établie qu'après acceptation explicite. Vous ne pouvez pas envoyer des demandes répétées à des utilisateurs qui ont refusé votre demande.</p>
+
+    <h2>6. Contenu utilisateur</h2>
+    <p>Vous pouvez télécharger des images comme photo de profil ou comme icônes de boutons de communication personnalisés, et ajouter des liens web (URLs) à des boutons personnalisés. Vous êtes seul responsable de tout le contenu téléchargé et de tous les liens ajoutés. Vous vous engagez à ne pas télécharger ni lier du contenu illégal, offensant, violent, sexuellement explicite ou nuisible.</p>
+    <p>ViviTap n'est pas responsable du contenu des sites web externes accessibles via les liens ajoutés aux boutons personnalisés. Les utilisateurs accèdent à ces sites à leurs propres risques.</p>
+    <p>Vous pouvez signaler un contenu inapproprié via <strong>Paramètres → Sécurité → Signaler un contenu</strong>.</p>
+
+    <h2>7. Abonnements et paiements</h2>
+    <h3>7.1 Plans</h3>
+    <ul>
+      <li><strong>Gratuit :</strong> fonctionnalités de base avec limites d'utilisation</li>
+      <li><strong>Famille (5,99 €/mois ou 64,99 €/an) :</strong> 6 contacts, 30 boutons personnalisés, dossiers, liens web, 30 notifications/heure</li>
+      <li><strong>Pro (11,99 €/mois ou 129,99 €/an) :</strong> 12 contacts, 80 boutons personnalisés, dossiers, liens web, 50 notifications/heure</li>
+    </ul>
+    <h3>7.2 Accès promotionnel</h3>
+    <p>Nous pouvons offrir des accès promotionnels ou des codes de fondation à certaines personnes ou organisations. Ces offres peuvent être retirées à tout moment.</p>
+    <h3>7.3 Facturation</h3>
+    <p>Les abonnements sont facturés mensuellement via Google Play (Google LLC). La gestion des abonnements est assurée par RevenueCat Inc. en notre nom.</p>
+    <h3>7.4 Résiliation</h3>
+    <p>Vous pouvez annuler à tout moment via les paramètres Google Play. Pas de remboursement pour les périodes partielles sauf obligation légale.</p>
+    <h3>7.5 Droit de rétractation (consommateurs UE)</h3>
+    <p>Les consommateurs UE disposent d'un droit de rétractation de 14 jours. En confirmant votre abonnement et en demandant un accès immédiat, vous reconnaissez perdre ce droit dès le début de la prestation (Art. 16(m) Directive 2011/83/UE).</p>
+
+    <h2>8. Utilisation acceptable</h2>
+    <p>Vous vous engagez à ne pas : harceler, nuire ou abuser d'autrui ; accéder de manière non autorisée à des comptes ou systèmes ; décompiler ou modifier l'Application ; transmettre du contenu illicite ou nuisible.</p>
+
+    <h2>9. Propriété intellectuelle</h2>
+    <p>Tout le contenu et les fonctionnalités de ViviTap sont la propriété exclusive de Muny Roth CHEV. Vous bénéficiez d'une licence limitée, non exclusive et non transférable pour utiliser l'Application à ses fins d'aide à la communication.</p>
+
+    <h2>10. Résiliation</h2>
+    <p>Nous pouvons suspendre ou résilier votre compte en cas de violation de ces CGU, avec préavis dans la mesure du possible. Vous pouvez supprimer votre compte à tout moment via <strong>Paramètres → Sécurité → Supprimer le compte</strong>.</p>
+
+    <h2>11. Droit applicable</h2>
+    <p>Ces CGU sont régies par le droit de la République Fédérale d'Allemagne. Les litiges relèvent de la compétence des tribunaux de Stuttgart, Allemagne, sauf disposition contraire du droit de la consommation applicable dans votre pays de résidence.</p>
+
+    <h2>12. Modifications des CGU</h2>
+    <p>En cas de modifications substantielles, nous vous en informerons dans l'Application au moins 30 jours avant leur entrée en vigueur. Si vous n'acceptez pas les nouvelles CGU, vous devez cesser d'utiliser l'Application avant la date d'effet.</p>
+
+    <div class="contact-box">
+      <strong>Contact</strong><br>
+      Muny Roth CHEV<br>c/o MDC#1006, Welserstraße 3, 87463 Dietmannsried, Allemagne<br>
+      <a href="mailto:contact@munyroth.com">contact@munyroth.com</a>
+    </div>
+  </div>
+
+  <!-- ══ DEUTSCH ══ -->
+  <div id="content-de" class="lang-content">
+    <h2>1. Annahme der Bedingungen</h2>
+    <p>Durch das Herunterladen, Installieren oder Verwenden von ViviTap ("die App") stimmen Sie diesen Nutzungsbedingungen zu. Wenn Sie nicht zustimmen, verwenden Sie die App nicht.</p>
+    <p>Diese Bedingungen stellen einen rechtsverbindlichen Vertrag zwischen Ihnen und Muny Roth CHEV ("wir", "uns"), dem Betreiber von ViviTap, dar.</p>
+
+    <h2>2. Beschreibung der App</h2>
+    <p>ViviTap ist eine <strong>ergänzende</strong> Kommunikationshilfe-App, die Menschen mit Kommunikationseinschränkungen ("Betreute") ermöglicht, mit Betreuern und Familienmitgliedern ("Helfer") über vordefinierte und anpassbare Nachrichten-Schaltflächen, Sprachausgabe und Echtzeit-Audio-/Videoanrufe zu kommunizieren.</p>
+
+    <h2>3. Wichtige Haftungsbeschränkung</h2>
+    <div class="warning">⚠️ ViviTap ist KEIN Medizinprodukt, KEIN Notfalldienst und KEIN Sicherheitssystem.</div>
+    <p>ViviTap ist ein ergänzendes Kommunikationsmittel. Es darf NICHT als Ersatz für Notfalldienste, als medizinisches oder therapeutisches Gerät oder als einziges Kommunikationsmittel in lebensbedrohlichen Situationen verwendet werden.</p>
+    <p><strong>Im Notfall rufen Sie die lokale Notrufnummer an (112 in Europa).</strong></p>
+    <p><strong>Nutzer werden empfohlen, jederzeit alternative Kommunikationsmittel verfügbar zu halten.</strong></p>
+    <p>Wir schließen jede Haftung für Schäden aus, die entstehen durch: Nicht-Zustellung von Nachrichten aufgrund von Geräte-/OS-Einschränkungen, App-Nichtverfügbarkeit, Nutzung der App als primäres Sicherheitssystem oder Netzwerkprobleme außerhalb unserer Kontrolle.</p>
+    <p>Im gesetzlich zulässigen Umfang beschränkt sich unsere Haftung für mittelbare oder Folgeschäden auf den Betrag, den Sie uns in den 12 Monaten vor dem Anspruch gezahlt haben. <strong>Nichts in diesen Bedingungen schränkt unsere Haftung für Tod oder Körperverletzung durch Fahrlässigkeit, Betrug oder sonstige gesetzlich nicht ausschließbare Haftung ein (einschließlich §§ 307, 309 BGB).</strong></p>
+
+    <h2>4. Nutzungsvoraussetzungen</h2>
+    <p>Sie müssen mindestens 16 Jahre alt sein, um ein Konto zu erstellen. Wenn Sie unter 16 Jahre alt sind, muss ein Elternteil oder gesetzlicher Vormund das Konto mit ausdrücklicher Einwilligung erstellen und verwalten.</p>
+
+    <h2>5. Benutzerkonten</h2>
+    <ul>
+      <li>Sie sind für die Vertraulichkeit Ihrer Zugangsdaten verantwortlich</li>
+      <li>Sie sind für alle Aktivitäten unter Ihrem Konto verantwortlich</li>
+      <li>Sie müssen bei der Registrierung genaue Angaben machen</li>
+      <li>Sie dürfen ohne deren Einwilligung keine Konten für andere erstellen</li>
+      <li>Sie dürfen die App nicht für rechtswidrige Zwecke nutzen</li>
+    </ul>
+    <h3>5.1 Verbindungen</h3>
+    <p>Um sich mit einem anderen Nutzer zu verbinden, müssen Sie eine Verbindungsanfrage senden. Der Empfänger sieht Ihren Benutzernamen und kann annehmen oder ablehnen. Eine Verbindung wird nur nach ausdrücklicher Annahme hergestellt. Sie dürfen keine wiederholten Anfragen an Nutzer senden, die Ihre Anfrage abgelehnt haben.</p>
+
+    <h2>6. Nutzerinhalte</h2>
+    <p>Sie können Bilder als Profilfoto oder als Symbole für benutzerdefinierte Kommunikationsschaltflächen hochladen und Weblinks (URLs) zu benutzerdefinierten Schaltflächen hinzufügen. Sie sind allein für alle hochgeladenen Inhalte und hinzugefügten Links verantwortlich. Sie verpflichten sich, keine illegalen, beleidigenden, gewalthaltigen, sexuell expliziten oder schädlichen Inhalte hochzuladen oder zu verlinken.</p>
+    <p>ViviTap ist nicht verantwortlich für den Inhalt externer Websites, auf die über Links in benutzerdefinierten Schaltflächen zugegriffen wird. Nutzer besuchen solche Websites auf eigenes Risiko.</p>
+    <p>Unangemessene Inhalte können über <strong>Einstellungen → Sicherheit → Inhalt melden</strong> gemeldet werden.</p>
+
+    <h2>7. Abonnements und Zahlungen</h2>
+    <h3>7.1 Pläne</h3>
+    <ul>
+      <li><strong>Kostenlos:</strong> 2 Kontakte, 5 benutzerdefinierte Schaltflächen, 20 Benachrichtigungen/Tag</li>
+      <li><strong>Familie (5,99 €/Monat oder 64,99 €/Jahr):</strong> 6 Kontakte, 30 benutzerdefinierte Schaltflächen, Ordner, Weblinks, 30 Benachrichtigungen/Stunde</li>
+      <li><strong>Pro (11,99 €/Monat oder 129,99 €/Jahr):</strong> 12 Kontakte, 80 benutzerdefinierte Schaltflächen, Ordner, Weblinks, 50 Benachrichtigungen/Stunde</li>
+    </ul>
+    <h3>7.2 Aktionszugang</h3>
+    <p>Wir können nach eigenem Ermessen Aktionszugänge oder Stiftungscodes an ausgewählte Personen oder Organisationen anbieten. Solche Angebote können jederzeit widerrufen werden.</p>
+    <h3>7.3 Abrechnung</h3>
+    <p>Abonnements werden monatlich über Google Play (Google LLC) abgerechnet. Die Abonnementverwaltung erfolgt durch RevenueCat Inc. in unserem Namen.</p>
+    <h3>7.4 Kündigung</h3>
+    <p>Sie können jederzeit über die Google Play-Einstellungen kündigen. Keine Rückerstattung für anteilige Abrechnungszeiträume, außer gesetzlich vorgeschrieben.</p>
+    <h3>7.5 Widerrufsrecht (EU-Verbraucher)</h3>
+    <p>EU-Verbraucher haben ein 14-tägiges Widerrufsrecht. Durch Bestätigung Ihres Abonnements und die Anforderung des sofortigen Zugangs erkennen Sie an, dass Sie Ihr Widerrufsrecht mit Beginn der Leistungserbringung verlieren (Art. 16(m) Richtlinie 2011/83/EU).</p>
+
+    <h2>8. Zulässige Nutzung</h2>
+    <p>Sie verpflichten sich, Folgendes zu unterlassen: andere zu belästigen, zu schädigen oder zu missbrauchen; unbefugten Zugang zu Konten oder Systemen zu erlangen; die App zu dekompilieren oder zu modifizieren; rechtswidrige oder schädliche Inhalte zu übermitteln.</p>
+
+    <h2>9. Geistiges Eigentum</h2>
+    <p>Alle Inhalte und Funktionalitäten von ViviTap sind ausschließliches Eigentum von Muny Roth CHEV. Ihnen wird eine beschränkte, nicht ausschließliche, nicht übertragbare Lizenz zur Nutzung der App für ihre bestimmungsgemäßen Kommunikationszwecke gewährt.</p>
+
+    <h2>10. Kündigung</h2>
+    <p>Wir können Ihr Konto bei Verstößen gegen diese Bedingungen sperren oder kündigen, soweit möglich mit vorheriger Ankündigung. Sie können Ihr Konto jederzeit über <strong>Einstellungen → Sicherheit → Konto löschen</strong> löschen.</p>
+
+    <h2>11. Anwendbares Recht</h2>
+    <p>Diese Bedingungen unterliegen dem Recht der Bundesrepublik Deutschland. Streitigkeiten unterliegen der Gerichtsbarkeit der Gerichte in Stuttgart, Deutschland, sofern nicht zwingendes Verbraucherschutzrecht Ihres Wohnsitzlandes etwas anderes vorsieht.</p>
+
+    <h2>12. Änderungen der Bedingungen</h2>
+    <p>Bei wesentlichen Änderungen werden wir Sie mindestens 30 Tage vor Inkrafttreten in der App benachrichtigen. Wenn Sie den aktualisierten Bedingungen nicht zustimmen, müssen Sie die App vor dem Inkrafttreten nicht mehr nutzen und können Ihr Konto löschen.</p>
+
+    <div class="contact-box">
+      <strong>Kontakt</strong><br>
+      Muny Roth CHEV<br>c/o MDC#1006, Welserstraße 3, 87463 Dietmannsried, Deutschland<br>
+      <a href="mailto:contact@munyroth.com">contact@munyroth.com</a>
+    </div>
   </div>
 
   <footer>© 2026 Muny Roth CHEV · ViviTap</footer>
 </div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('content-' + lang).classList.add('active');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      if (btn.textContent === lang.toUpperCase()) btn.classList.add('active');
+    });
+    const titles = { en: 'ViviTap – Terms of Service', fr: 'ViviTap – Conditions Générales d\'Utilisation', de: 'ViviTap – Nutzungsbedingungen' };
+    const dates = { en: 'Last updated: June 2026', fr: 'Dernière mise à jour : juin 2026', de: 'Letzte Aktualisierung: Juni 2026' };
+    document.getElementById('header-title').textContent = titles[lang];
+    document.getElementById('header-date').textContent = dates[lang];
+  }
+
+  const urlLang = new URLSearchParams(window.location.search).get('lang');
+  if (urlLang && ['en','fr','de'].includes(urlLang)) setLang(urlLang);
+</script>
 </body>
 </html>

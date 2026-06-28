@@ -4,161 +4,383 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ViviTap – Privacy Policy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; color: #111827; background: #f9fafb; line-height: 1.7; }
+    body { font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; color: #111827; background: #f9fafb; line-height: 1.7; }
     .container { max-width: 800px; margin: 0 auto; padding: 48px 24px; background: #fff; }
-    header { border-bottom: 2px solid #2563EB; padding-bottom: 24px; margin-bottom: 40px; }
-    header h1 { font-size: 2rem; color: #2563EB; margin-bottom: 8px; }
+    header { border-bottom: 2px solid #3E6192; padding-bottom: 24px; margin-bottom: 24px; }
+    header h1 { font-size: 2rem; color: #3E6192; margin-bottom: 8px; }
     header p { color: #6B7280; font-size: 0.9rem; }
-    h2 { font-size: 1.3rem; color: #111827; margin: 36px 0 12px; border-left: 4px solid #2563EB; padding-left: 12px; }
+    h2 { font-size: 1.3rem; color: #111827; margin: 36px 0 12px; border-left: 4px solid #3E6192; padding-left: 12px; }
     h3 { font-size: 1.05rem; color: #374151; margin: 24px 0 8px; }
     p { margin-bottom: 12px; }
     ul { margin: 8px 0 12px 24px; }
     li { margin-bottom: 6px; }
-    .warning { background: #FEF3C7; border-left: 4px solid #F59E0B; padding: 12px 16px; border-radius: 4px; margin: 16px 0; font-weight: 500; }
     .contact-box { background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 8px; padding: 16px; margin-top: 32px; }
     footer { text-align: center; color: #9CA3AF; font-size: 0.8rem; margin-top: 48px; padding-top: 24px; border-top: 1px solid #E5E7EB; }
-    a { color: #2563EB; }
-    nav { margin-bottom: 32px; }
+    a { color: #3E6192; }
+    nav { margin-bottom: 24px; }
     nav a { margin-right: 16px; font-size: 0.9rem; }
+    .lang-switcher { display: flex; gap: 8px; margin-bottom: 32px; }
+    .lang-btn { padding: 6px 16px; border: 1.5px solid #3E6192; border-radius: 20px; background: #fff; color: #3E6192; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .lang-btn.active { background: #3E6192; color: #fff; }
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
   </style>
 </head>
 <body>
 <div class="container">
   <header>
     <h1>ViviTap – Privacy Policy</h1>
-    <p>Last updated: June 2026</p>
+    <p id="header-date">Last updated: June 2026</p>
   </header>
 
   <nav>
     <a href="index.html">← Home</a>
-    <a href="terms-of-service.html">Terms of Service</a>
+    <a href="terms-of-service.html" id="nav-tos">Terms of Service</a>
     <a href="impressum.html">Impressum</a>
   </nav>
 
-  <h2>1. Introduction</h2>
-  <p>ViviTap is a communication assistance application designed for people with communication disabilities and their caregivers ("helpers"). This Privacy Policy explains how we collect, use, store, and protect your personal data in compliance with the EU General Data Protection Regulation (GDPR / DSGVO) and applicable German law.</p>
-  <p><strong>Controller:</strong><br>
-  Muny Roth CHEV<br>
-  Büsnauer Platz 1, Stuttgart, Germany<br>
-  contact@munyroth.com</p>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" onclick="setLang('de')">DE</button>
+  </div>
 
-  <h2>2. Data We Collect</h2>
-  <h3>2.1 Account Data</h3>
-  <ul>
-    <li>Email address (Firebase Authentication)</li>
-    <li>Username (chosen at registration)</li>
-    <li>Display name (optional)</li>
-    <li>Profile photo (optional, stored in Firebase Storage)</li>
-    <li>User role: helpee or helper</li>
-  </ul>
+  <!-- ══ ENGLISH ══ -->
+  <div id="content-en" class="lang-content active">
+    <h2>1. Introduction</h2>
+    <p>ViviTap is a communication assistance application designed for people with communication disabilities and their caregivers ("helpers"). It serves users of all ages, including minors who use the app under parental or guardian supervision. This Privacy Policy explains how we collect, use, store, and protect your personal data in compliance with the EU General Data Protection Regulation (GDPR / DSGVO) and applicable German law.</p>
+    <p><strong>Controller:</strong><br>Muny Roth CHEV<br>c/o MDC#1006, Welserstraße 3, 87463 Dietmannsried, Germany<br>contact@munyroth.com</p>
 
-  <h3>2.2 Communication Data</h3>
-  <ul>
-    <li>Messages sent and received between connected users (last 50 messages per contact, stored in Firestore)</li>
-    <li>Custom communication buttons (text, emoji, optional image)</li>
-    <li>Button usage statistics (frequency of use per button)</li>
-  </ul>
+    <h2>2. Data We Collect</h2>
+    <h3>2.1 Account Data</h3>
+    <ul>
+      <li>Email address (Firebase Authentication)</li>
+      <li>Username (chosen at registration)</li>
+      <li>Display name (optional)</li>
+      <li>Profile photo (optional, stored in Firebase Storage)</li>
+      <li>User role: helpee or helper</li>
+    </ul>
+    <h3>2.2 Communication Data</h3>
+    <ul>
+      <li>Messages sent and received between connected users (last 50 messages per contact, stored in Firestore)</li>
+      <li>Custom communication buttons (text, emoji, optional image)</li>
+      <li>Button usage statistics (frequency of use per button)</li>
+    </ul>
+    <h3>2.3 Technical Data</h3>
+    <ul>
+      <li>Firebase Cloud Messaging (FCM) push token for notifications</li>
+      <li>App preferences: language, grid layout, dark mode, audio volume, send method</li>
+      <li>Connection list (usernames of connected caregivers/users)</li>
+      <li>Crash reports and anonymized diagnostic data (Firebase Crashlytics)</li>
+    </ul>
+    <h3>2.4 Call Data (coming in a future version)</h3>
+    <ul>
+      <li>Audio and video call functionality is planned for a future version and is not currently available to users. When activated, call logs (caller/callee username, channel name, call status) will be stored temporarily and audio/video streams will be processed in real time via LiveKit without being stored by ViviTap.</li>
+    </ul>
+    <h3>2.5 Subscription Data</h3>
+    <ul>
+      <li>Subscription status and plan (free, Family, Pro)</li>
+      <li>Purchase history managed by RevenueCat</li>
+      <li>An anonymized user identifier shared with RevenueCat for subscription management</li>
+    </ul>
 
-  <h3>2.3 Technical Data</h3>
-  <ul>
-    <li>Firebase Cloud Messaging (FCM) push token for notifications</li>
-    <li>App preferences: language, grid layout, dark mode, audio volume, send method</li>
-    <li>Connection list (usernames of connected caregivers/users)</li>
-    <li>Crash reports and anonymized diagnostic data (Firebase Crashlytics)</li>
-  </ul>
+    <h2>3. How We Use Your Data</h2>
+    <ul>
+      <li>To provide core app functionality: sending messages, communication buttons, managing contacts</li>
+      <li>To deliver push notifications for incoming messages</li>
+      <li>To restore your preferences across sessions</li>
+      <li>To manage subscriptions and enforce plan limits</li>
+      <li>To monitor app stability and fix crashes</li>
+      <li>To enable account deletion and data erasure upon request</li>
+    </ul>
+    <p>We do not use your data for advertising, profiling, or marketing purposes.</p>
 
-  <h3>2.4 Call Data</h3>
-  <ul>
-    <li>Call logs stored temporarily in Firestore: caller username, callee username, channel name, call status</li>
-    <li>Audio and video streams during calls (processed in real time via LiveKit, not stored by ViviTap)</li>
-  </ul>
+    <h2>4. Legal Basis (GDPR Art. 6 & 9)</h2>
+    <ul>
+      <li>Art. 6(1)(b) — Performance of a contract: core app functionality</li>
+      <li>Art. 6(1)(a) — Consent: optional data such as profile photo</li>
+      <li>Art. 6(1)(f) — Legitimate interest: security, fraud prevention, app stability</li>
+    </ul>
+    <p>Regarding health-related data: the use of a communication assistance application may implicitly reveal a communication disability. This constitutes special category data under GDPR Art. 9. We process this data solely to provide the app's core services, based on <strong>explicit consent given at registration (Art. 9(2)(a))</strong>. This explicit consent is collected through a dedicated consent screen at registration, where users must actively check three separate boxes: (1) acceptance of the Terms of Service and Privacy Policy, (2) acknowledgement that ViviTap may process data relating to their health or disability situation, and (3) confirmation of age eligibility. The consent record, including timestamp and version of the documents presented, is stored securely and associated with the user's account.</p>
 
-  <h3>2.5 Subscription Data</h3>
-  <ul>
-    <li>Subscription status and plan (free, Family, Pro)</li>
-    <li>Purchase history managed by RevenueCat</li>
-    <li>An anonymized user identifier shared with RevenueCat for subscription management</li>
-  </ul>
+    <h2>5. Third-Party Services</h2>
+    <h3>5.1 Firebase (Google LLC)</h3>
+    <p>We use Firebase Authentication, Firestore, Firebase Storage, Firebase Cloud Messaging, and Firebase Crashlytics. User data (Firestore, Storage) is stored on servers located in <strong>europe-west3 (Frankfurt, Germany)</strong>. Cloud Functions are deployed in europe-west1 (Belgium) and process data transiently without storing it. Crash reports may contain device type, OS version, and anonymized stack traces. More information: <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></p>
+    <h3>5.2 Google Sign-In (Google LLC)</h3>
+    <p>If you choose to sign in with Google, your Google account email address and a Google-issued identifier are used solely for authentication purposes. More information: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></p>
+    <h3>5.3 LiveKit (LiveKit Inc.)</h3>
+    <p>We use LiveKit for real-time audio and video calls. Audio and video streams are not recorded or stored by ViviTap. LiveKit may process connection metadata (IP address, connection timestamps) for the duration of the call. LiveKit applies Standard Contractual Clauses (SCCs) for EU data transfers. More information: <a href="https://livekit.io/privacy-policy" target="_blank">livekit.io/privacy-policy</a></p>
+    <h3>5.4 RevenueCat (RevenueCat Inc.)</h3>
+    <p>We use RevenueCat to manage in-app subscriptions. RevenueCat processes your subscription status, purchase history, and an anonymized user identifier. Payments are handled by Google Play. RevenueCat applies SCCs for EU data transfers. More information: <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a></p>
 
-  <h2>3. How We Use Your Data</h2>
-  <ul>
-    <li>To provide core app functionality: sending messages, making calls, managing contacts</li>
-    <li>To deliver push notifications for incoming messages and calls</li>
-    <li>To restore your preferences across sessions</li>
-    <li>To manage subscriptions and enforce plan limits</li>
-    <li>To monitor app stability and fix crashes</li>
-    <li>To enable account deletion and data erasure upon request</li>
-  </ul>
-  <p>We do not use your data for advertising, profiling, or marketing purposes.</p>
+    <h2>6. Data Retention</h2>
+    <ul>
+      <li>Account data: retained as long as the account is active</li>
+      <li>Messages: last 50 messages per contact; deleted when either user deletes their account</li>
+      <li>Call logs: not applicable currently (feature coming in a future version)</li>
+      <li>Push tokens: deleted upon account deletion</li>
+      <li>Crash reports: retained by Firebase Crashlytics for up to 90 days</li>
+      <li>Consent records: retained for the duration of the account plus 3 years after deletion (GDPR Art. 7)</li>
+      <li>Subscription history: retained by RevenueCat per their own retention policy and legal obligations</li>
+      <li>All data held by ViviTap: permanently deleted upon account deletion (Settings → Security → Delete Account)</li>
+    </ul>
 
-  <h2>4. Legal Basis (GDPR Art. 6)</h2>
-  <ul>
-    <li>Art. 6(1)(b) — Performance of a contract: core app functionality</li>
-    <li>Art. 6(1)(a) — Consent: optional data such as profile photo</li>
-    <li>Art. 6(1)(f) — Legitimate interest: security, fraud prevention, app stability</li>
-  </ul>
-  <p>Regarding health-related data: the use of a communication assistance application may implicitly reveal a communication disability. This constitutes special category data under GDPR Art. 9. We process this data solely to provide the app's core services, based on explicit consent given at registration (Art. 9(2)(a)).</p>
+    <h2>7. Your Rights (GDPR)</h2>
+    <p>You have the right to: access (Art. 15), rectification (Art. 16), erasure (Art. 17) via Settings → Security → Delete Account, restriction of processing (Art. 18), data portability (Art. 20), object to processing (Art. 21), and to withdraw consent at any time.</p>
+    <p>Contact us at <a href="mailto:contact@munyroth.com">contact@munyroth.com</a>. We will respond within one month (Art. 12 GDPR).</p>
+    <p>You may also lodge a complaint with: <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank">LfDI Baden-Württemberg</a></p>
 
-  <h2>5. Third-Party Services</h2>
-  <h3>5.1 Firebase (Google LLC)</h3>
-  <p>We use Firebase Authentication, Firestore, Firebase Storage, Firebase Cloud Messaging, and Firebase Crashlytics. User data (Firestore, Storage) is stored on servers located in <strong>europe-west3 (Frankfurt, Germany)</strong>. Cloud Functions are deployed in europe-west1 (Belgium) and process data transiently without storing it. Crash reports may contain device type, OS version, and anonymized stack traces. No personally identifiable information is intentionally included in crash reports. More information: <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></p>
+    <h2>8. International Data Transfers</h2>
+    <p>Some third-party services (LiveKit, RevenueCat) may transfer data outside the EU. All such transfers are covered by Standard Contractual Clauses (SCCs) approved by the European Commission.</p>
 
-  <h3>5.2 Google Sign-In (Google LLC)</h3>
-  <p>If you choose to sign in with Google, your Google account email address and a Google-issued identifier are used solely for authentication purposes. No additional Google profile data is accessed or stored. More information: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></p>
+    <h2>9. Minors</h2>
+    <p>ViviTap is not a children's app, but it may be used by individuals under 16 years of age — including people with communication disabilities — under the supervision and with the explicit consent of a parent or legal guardian. In such cases, the parent or guardian creates and manages the account and is responsible for ensuring appropriate use.</p>
+    <p>By creating an account, you confirm that you are at least 16 years old, or that a parent or guardian has reviewed and accepted these terms and provided explicit consent on behalf of the minor.</p>
 
-  <h3>5.3 LiveKit (LiveKit Inc.)</h3>
-  <p>We use LiveKit for real-time audio and video calls. Audio and video streams are transmitted through LiveKit's infrastructure and are not recorded or stored by ViviTap. LiveKit may process connection metadata (IP address, connection timestamps) for the duration of the call. LiveKit applies Standard Contractual Clauses (SCCs) for EU data transfers. More information: <a href="https://livekit.io/privacy-policy" target="_blank">livekit.io/privacy-policy</a></p>
+    <h2>10. Data Security</h2>
+    <p>All data transmitted between the app and our servers is encrypted in transit using TLS/HTTPS. Firebase infrastructure provides encryption at rest. Access to user data is restricted to authenticated users via Firebase security rules and Cloud Functions.</p>
 
-  <h3>5.4 RevenueCat (RevenueCat Inc.)</h3>
-  <p>We use RevenueCat to manage in-app subscriptions. RevenueCat processes your subscription status, purchase history, and an anonymized user identifier. RevenueCat does not process payment card data directly — payments are handled by Google Play. RevenueCat applies Standard Contractual Clauses (SCCs) for EU data transfers. More information: <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a></p>
+    <h2>11. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of significant changes within the app. The date at the top of this page indicates when the policy was last revised.</p>
 
-  <h2>6. Data Retention</h2>
-  <ul>
-    <li>Account data: retained as long as the account is active</li>
-    <li>Messages: last 50 messages per contact stored in Firestore; messages exchanged with a contact are permanently deleted when that contact deletes their account, or when you delete your own account</li>
-    <li>Call logs: deleted automatically within 24 hours</li>
-    <li>Push tokens: deleted upon account deletion</li>
-    <li>Crash reports: retained by Firebase Crashlytics for up to 90 days</li>
-    <li>Subscription history: retained by RevenueCat in accordance with their own retention policy and applicable legal obligations (including tax and accounting requirements)</li>
-    <li>All data held by ViviTap: permanently deleted upon account deletion (Settings → Security → Delete Account)</li>
-  </ul>
+    <div class="contact-box">
+      <strong>Contact</strong><br>
+      Muny Roth CHEV<br>c/o MDC#1006, Welserstraße 3, 87463 Dietmannsried, Germany<br>
+      <a href="mailto:contact@munyroth.com">contact@munyroth.com</a>
+    </div>
+  </div>
 
-  <h2>7. Your Rights (GDPR)</h2>
-  <p>You have the right to:</p>
-  <ul>
-    <li>Access your personal data (Art. 15)</li>
-    <li>Rectification of inaccurate data (Art. 16)</li>
-    <li>Erasure — "right to be forgotten" (Art. 17) — available in Settings → Security → Delete Account</li>
-    <li>Restriction of processing (Art. 18)</li>
-    <li>Data portability (Art. 20) — contact us to request an export</li>
-    <li>Object to processing (Art. 21)</li>
-    <li>Withdraw consent at any time</li>
-  </ul>
-  <p>To exercise your rights, contact us at <a href="mailto:contact@munyroth.com">contact@munyroth.com</a>. We will respond within one month of receiving your request (Art. 12 GDPR).</p>
-  <p>You may also lodge a complaint with: <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank">LfDI Baden-Württemberg</a></p>
+  <!-- ══ FRANÇAIS ══ -->
+  <div id="content-fr" class="lang-content">
+    <h2>1. Introduction</h2>
+    <p>ViviTap est une application d'aide à la communication conçue pour les personnes ayant des difficultés de communication et leurs aidants ("helpers"). Elle s'adresse à des utilisateurs de tout âge, y compris des mineurs utilisant l'application sous supervision parentale. Cette politique explique comment nous collectons, utilisons, stockons et protégeons vos données personnelles conformément au RGPD et au droit allemand.</p>
+    <p><strong>Responsable du traitement :</strong><br>Muny Roth CHEV<br>Büsnauer Platz 1, Stuttgart, Allemagne<br>contact@munyroth.com</p>
 
-  <h2>8. International Data Transfers</h2>
-  <p>Some third-party services (LiveKit, RevenueCat) may transfer data outside the European Union. All such transfers are covered by Standard Contractual Clauses (SCCs) approved by the European Commission, ensuring an equivalent level of data protection.</p>
+    <h2>2. Données collectées</h2>
+    <h3>2.1 Données de compte</h3>
+    <ul>
+      <li>Adresse email (Firebase Authentication)</li>
+      <li>Identifiant unique (choisi à l'inscription)</li>
+      <li>Nom affiché (optionnel)</li>
+      <li>Photo de profil (optionnelle, stockée dans Firebase Storage)</li>
+      <li>Rôle : aidé ou aidant</li>
+    </ul>
+    <h3>2.2 Données de communication</h3>
+    <ul>
+      <li>Messages envoyés et reçus (50 derniers messages par contact, stockés dans Firestore)</li>
+      <li>Boutons de communication personnalisés (texte, emoji, image optionnelle)</li>
+      <li>Statistiques d'utilisation des boutons</li>
+    </ul>
+    <h3>2.3 Données techniques</h3>
+    <ul>
+      <li>Token push FCM pour les notifications</li>
+      <li>Préférences : langue, disposition de la grille, mode sombre, volume, méthode d'envoi</li>
+      <li>Liste de connexions (identifiants des contacts)</li>
+      <li>Rapports de crash anonymisés (Firebase Crashlytics)</li>
+    </ul>
+    <h3>2.4 Données d'appels (fonctionnalité à venir)</h3>
+    <ul>
+      <li>La fonction d'appels audio/vidéo est prévue pour une version future et n'est pas encore disponible. Lorsqu'elle sera activée, des logs d'appels temporaires (identifiants, nom du canal, statut) seront stockés et les flux audio/vidéo seront traités en temps réel via LiveKit sans être stockés par ViviTap.</li>
+    </ul>
+    <h3>2.5 Données d'abonnement</h3>
+    <ul>
+      <li>Statut d'abonnement (Gratuit, Famille, Pro)</li>
+      <li>Historique d'achats géré par RevenueCat</li>
+      <li>Identifiant anonymisé partagé avec RevenueCat</li>
+    </ul>
 
-  <h2>9. Minors</h2>
-  <p>Users under 16 years of age require verifiable parental or guardian consent. By creating an account, you confirm that you are at least 16 years old, or that a parent or guardian has provided consent.</p>
+    <h2>3. Utilisation des données</h2>
+    <ul>
+      <li>Fonctionnalités principales : messages, boutons de communication, gestion des contacts</li>
+      <li>Notifications push pour messages entrants</li>
+      <li>Restauration des préférences</li>
+      <li>Gestion des abonnements et limites</li>
+      <li>Stabilité de l'application</li>
+      <li>Suppression des données sur demande</li>
+    </ul>
+    <p>Nous n'utilisons pas vos données à des fins publicitaires, de profilage ou de marketing.</p>
 
-  <h2>10. Data Security</h2>
-  <p>All data transmitted between the app and our servers is encrypted in transit using TLS/HTTPS. Firebase infrastructure provides encryption at rest. Access to user data is restricted to authenticated users via Firebase security rules and Cloud Functions.</p>
+    <h2>4. Base légale (RGPD Art. 6 & 9)</h2>
+    <ul>
+      <li>Art. 6(1)(b) — Exécution du contrat : fonctionnalités principales</li>
+      <li>Art. 6(1)(a) — Consentement : données optionnelles (photo de profil)</li>
+      <li>Art. 6(1)(f) — Intérêt légitime : sécurité, stabilité</li>
+    </ul>
+    <p>Concernant les données de santé : l'utilisation d'une application d'aide à la communication peut implicitement révéler un handicap de communication. Ces données relèvent de l'Art. 9 RGPD (données de catégorie spéciale). Nous les traitons uniquement pour fournir les services de base, sur la base d'un <strong>consentement explicite donné à l'inscription (Art. 9(2)(a))</strong>. Ce consentement est recueilli via un écran dédié avec trois cases à cocher : (1) acceptation des CGU et de la présente politique, (2) reconnaissance du traitement des données liées au handicap, (3) confirmation de l'âge. L'enregistrement du consentement (horodatage, version des documents) est conservé de manière sécurisée.</p>
 
-  <h2>11. Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. We will notify you of significant changes within the app. The date at the top of this page indicates when the policy was last revised.</p>
+    <h2>5. Services tiers</h2>
+    <h3>5.1 Firebase (Google LLC)</h3>
+    <p>Authentification, base de données, stockage, notifications, crash reporting. Données stockées en <strong>europe-west3 (Francfort, Allemagne)</strong>. Cloud Functions en europe-west1 (Belgique). <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></p>
+    <h3>5.2 Google Sign-In (Google LLC)</h3>
+    <p>Si vous choisissez la connexion Google, votre email et identifiant Google sont utilisés uniquement pour l'authentification. <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></p>
+    <h3>5.3 LiveKit (LiveKit Inc.) — fonctionnalité à venir</h3>
+    <p>LiveKit est intégré en prévision d'une fonctionnalité d'appels audio/vidéo disponible dans une version future. Cette fonctionnalité n'est pas encore active. Lorsqu'elle le sera, les flux ne seront pas enregistrés par ViviTap et LiveKit appliquera les SCCs. <a href="https://livekit.io/privacy-policy" target="_blank">livekit.io/privacy-policy</a></p>
+    <h3>5.4 RevenueCat (RevenueCat Inc.)</h3>
+    <p>Gestion des abonnements. RevenueCat traite le statut d'abonnement, l'historique d'achats et un identifiant anonymisé. Les paiements sont gérés par Google Play. SCCs applicables. <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a></p>
 
-  <div class="contact-box">
-    <strong>Contact</strong><br>
-    Muny Roth CHEV<br>
-    Büsnauer Platz 1, Stuttgart, Germany<br>
-    <a href="mailto:contact@munyroth.com">contact@munyroth.com</a>
+    <h2>6. Conservation des données</h2>
+    <ul>
+      <li>Données de compte : conservées tant que le compte est actif</li>
+      <li>Messages : 50 derniers par contact ; supprimés si l'un des deux utilisateurs supprime son compte</li>
+      <li>Logs d'appels : non applicables actuellement (fonctionnalité à venir)</li>
+      <li>Tokens push : supprimés à la suppression du compte</li>
+      <li>Rapports de crash : 90 jours (politique Firebase Crashlytics)</li>
+      <li>Enregistrements de consentement : durée du compte + 3 ans après suppression (Art. 7 RGPD)</li>
+      <li>Historique RevenueCat : selon leurs obligations légales et fiscales</li>
+      <li>Toutes les données ViviTap : supprimées définitivement à la suppression du compte (Paramètres → Sécurité → Supprimer le compte)</li>
+    </ul>
+
+    <h2>7. Vos droits (RGPD)</h2>
+    <p>Vous disposez des droits d'accès (Art. 15), de rectification (Art. 16), d'effacement (Art. 17) via Paramètres → Sécurité → Supprimer le compte, de limitation (Art. 18), de portabilité (Art. 20), d'opposition (Art. 21) et de retrait du consentement à tout moment.</p>
+    <p>Contactez-nous : <a href="mailto:contact@munyroth.com">contact@munyroth.com</a>. Réponse sous un mois (Art. 12 RGPD).</p>
+    <p>Vous pouvez également déposer une plainte auprès du : <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank">LfDI Baden-Württemberg</a></p>
+
+    <h2>8. Transferts internationaux</h2>
+    <p>Certains services tiers (LiveKit, RevenueCat) peuvent transférer des données hors de l'UE. Tous ces transferts sont couverts par des clauses contractuelles types (CCT) approuvées par la Commission européenne.</p>
+
+    <h2>9. Mineurs</h2>
+    <p>ViviTap n'est pas une application pour enfants, mais elle peut être utilisée par des personnes de moins de 16 ans — notamment des personnes ayant des difficultés de communication — sous la supervision et avec le consentement explicite d'un parent ou tuteur légal. Dans ce cas, le parent ou tuteur crée et gère le compte et est responsable de l'utilisation appropriée de l'application.</p>
+    <p>En créant un compte, vous confirmez avoir 16 ans ou plus, ou qu'un parent ou tuteur a accepté ces conditions et donné son consentement explicite au nom du mineur.</p>
+
+    <h2>10. Sécurité des données</h2>
+    <p>Toutes les données transmises entre l'application et nos serveurs sont chiffrées via TLS/HTTPS. L'infrastructure Firebase assure le chiffrement au repos. L'accès aux données est restreint via les règles de sécurité Firestore et les Cloud Functions.</p>
+
+    <h2>11. Modifications de cette politique</h2>
+    <p>Nous pouvons mettre à jour cette politique de confidentialité. Nous vous informerons des modifications importantes via l'application. La date en haut de cette page indique la dernière révision.</p>
+
+    <div class="contact-box">
+      <strong>Contact</strong><br>
+      Muny Roth CHEV<br>c/o MDC#1006, Welserstraße 3, 87463 Dietmannsried, Allemagne<br>
+      <a href="mailto:contact@munyroth.com">contact@munyroth.com</a>
+    </div>
+  </div>
+
+  <!-- ══ DEUTSCH ══ -->
+  <div id="content-de" class="lang-content">
+    <h2>1. Einleitung</h2>
+    <p>ViviTap ist eine Kommunikationshilfe-App für Menschen mit Kommunikationseinschränkungen und ihre Betreuer ("Helfer"). Die App richtet sich an Nutzer aller Altersgruppen, einschließlich Minderjährige unter elterlicher Aufsicht. Diese Datenschutzrichtlinie erläutert, wie wir Ihre personenbezogenen Daten gemäß DSGVO und deutschem Recht erheben, verwenden, speichern und schützen.</p>
+    <p><strong>Verantwortlicher:</strong><br>Muny Roth CHEV<br>Büsnauer Platz 1, Stuttgart, Deutschland<br>contact@munyroth.com</p>
+
+    <h2>2. Erhobene Daten</h2>
+    <h3>2.1 Kontodaten</h3>
+    <ul>
+      <li>E-Mail-Adresse (Firebase Authentication)</li>
+      <li>Benutzername (bei der Registrierung gewählt)</li>
+      <li>Anzeigename (optional)</li>
+      <li>Profilfoto (optional, in Firebase Storage gespeichert)</li>
+      <li>Benutzerrolle: Betreuter oder Betreuer</li>
+    </ul>
+    <h3>2.2 Kommunikationsdaten</h3>
+    <ul>
+      <li>Gesendete und empfangene Nachrichten (letzte 50 pro Kontakt, in Firestore gespeichert)</li>
+      <li>Benutzerdefinierte Kommunikationsschaltflächen (Text, Emoji, optionales Bild)</li>
+      <li>Nutzungsstatistiken der Schaltflächen</li>
+    </ul>
+    <h3>2.3 Technische Daten</h3>
+    <ul>
+      <li>FCM-Push-Token für Benachrichtigungen</li>
+      <li>App-Einstellungen: Sprache, Rasterlayout, Dunkelmodus, Lautstärke, Sendemethode</li>
+      <li>Verbindungsliste (Benutzernamen der verbundenen Kontakte)</li>
+      <li>Anonymisierte Absturzberichte (Firebase Crashlytics)</li>
+    </ul>
+    <h3>2.4 Anrufdaten (zukünftige Funktion)</h3>
+    <ul>
+      <li>Die Audio-/Videoanruffunktion ist für eine zukünftige Version geplant und derzeit nicht verfügbar. Wenn sie aktiviert wird, werden temporäre Anrufprotokolle gespeichert und Streams in Echtzeit über LiveKit verarbeitet, ohne von ViviTap gespeichert zu werden.</li>
+    </ul>
+    <h3>2.5 Abonnementdaten</h3>
+    <ul>
+      <li>Abonnementstatus (Kostenlos, Familie, Pro)</li>
+      <li>Kaufhistorie verwaltet von RevenueCat</li>
+      <li>Anonymisierter Nutzeridentifikator geteilt mit RevenueCat</li>
+    </ul>
+
+    <h2>3. Verwendung Ihrer Daten</h2>
+    <ul>
+      <li>Bereitstellung der App-Kernfunktionen: Nachrichten, Kommunikationsschaltflächen, Kontaktverwaltung</li>
+      <li>Push-Benachrichtigungen für eingehende Nachrichten</li>
+      <li>Wiederherstellung Ihrer Einstellungen</li>
+      <li>Verwaltung von Abonnements und Nutzungsgrenzen</li>
+      <li>App-Stabilität und Fehlerbehebung</li>
+      <li>Datenlöschung auf Anfrage</li>
+    </ul>
+    <p>Wir verwenden Ihre Daten nicht für Werbung, Profiling oder Marketing.</p>
+
+    <h2>4. Rechtsgrundlage (DSGVO Art. 6 & 9)</h2>
+    <ul>
+      <li>Art. 6(1)(b) — Vertragserfüllung: Kernfunktionen der App</li>
+      <li>Art. 6(1)(a) — Einwilligung: optionale Daten (Profilfoto)</li>
+      <li>Art. 6(1)(f) — Berechtigte Interessen: Sicherheit, Stabilität</li>
+    </ul>
+    <p>Zu gesundheitsbezogenen Daten: Die Nutzung einer Kommunikationshilfe-App kann implizit eine Kommunikationseinschränkung offenbaren. Diese Daten fallen unter Art. 9 DSGVO (besondere Kategorien). Wir verarbeiten sie ausschließlich zur Erbringung der Kerndienste, auf Basis einer <strong>ausdrücklichen Einwilligung bei der Registrierung (Art. 9(2)(a))</strong>. Diese wird über einen dedizierten Einwilligungsbildschirm eingeholt, auf dem drei Kästchen aktiv angekreuzt werden müssen: (1) Akzeptanz der AGB und dieser Richtlinie, (2) Bestätigung der Verarbeitung behinderungsbezogener Daten, (3) Altersbestätigung. Der Einwilligungsnachweis wird sicher gespeichert.</p>
+
+    <h2>5. Drittanbieter</h2>
+    <h3>5.1 Firebase (Google LLC)</h3>
+    <p>Authentifizierung, Datenbank, Speicher, Benachrichtigungen, Absturzberichte. Nutzerdaten gespeichert in <strong>europe-west3 (Frankfurt, Deutschland)</strong>. Cloud Functions in europe-west1 (Belgien). <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></p>
+    <h3>5.2 Google Sign-In (Google LLC)</h3>
+    <p>Bei Google-Anmeldung werden E-Mail und Google-Identifikator ausschließlich zur Authentifizierung verwendet. <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></p>
+    <h3>5.3 LiveKit (LiveKit Inc.) — zukünftige Funktion</h3>
+    <p>LiveKit ist für eine zukünftige Audio-/Videoanruffunktion integriert, die derzeit nicht aktiv ist. Wenn sie aktiviert wird, werden Streams nicht von ViviTap gespeichert und SCCs gelten. <a href="https://livekit.io/privacy-policy" target="_blank">livekit.io/privacy-policy</a></p>
+    <h3>5.4 RevenueCat (RevenueCat Inc.)</h3>
+    <p>Abonnementverwaltung. RevenueCat verarbeitet Abonnementstatus, Kaufhistorie und eine anonymisierte Nutzer-ID. Zahlungen erfolgen über Google Play. SCCs gelten. <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a></p>
+
+    <h2>6. Datenspeicherung</h2>
+    <ul>
+      <li>Kontodaten: bis zur Kontolöschung</li>
+      <li>Nachrichten: letzte 50 pro Kontakt; gelöscht wenn ein Nutzer sein Konto löscht</li>
+      <li>Anrufprotokolle: derzeit nicht anwendbar (zukünftige Funktion)</li>
+      <li>Push-Token: bei Kontolöschung gelöscht</li>
+      <li>Absturzberichte: bis zu 90 Tage (Firebase Crashlytics)</li>
+      <li>Einwilligungsnachweise: Kontolaufzeit + 3 Jahre nach Löschung (DSGVO Art. 7)</li>
+      <li>RevenueCat-Historie: gemäß deren eigener Aufbewahrungsrichtlinie</li>
+      <li>Alle ViviTap-Daten: dauerhaft gelöscht bei Kontolöschung (Einstellungen → Sicherheit → Konto löschen)</li>
+    </ul>
+
+    <h2>7. Ihre Rechte (DSGVO)</h2>
+    <p>Sie haben das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17) über Einstellungen → Sicherheit → Konto löschen, Einschränkung (Art. 18), Datenübertragbarkeit (Art. 20), Widerspruch (Art. 21) und Widerruf der Einwilligung.</p>
+    <p>Kontakt: <a href="mailto:contact@munyroth.com">contact@munyroth.com</a>. Wir antworten innerhalb eines Monats (Art. 12 DSGVO).</p>
+    <p>Sie können auch Beschwerde einlegen beim: <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank">LfDI Baden-Württemberg</a></p>
+
+    <h2>8. Internationale Datenübermittlungen</h2>
+    <p>Einige Drittanbieter (LiveKit, RevenueCat) können Daten außerhalb der EU übermitteln. Alle Übermittlungen sind durch von der EU-Kommission genehmigte Standardvertragsklauseln (SCC) abgesichert.</p>
+
+    <h2>9. Minderjährige</h2>
+    <p>ViviTap ist keine Kinder-App, kann aber von Personen unter 16 Jahren — einschließlich Menschen mit Kommunikationseinschränkungen — unter Aufsicht und mit ausdrücklicher Einwilligung eines Elternteils oder gesetzlichen Vormunds genutzt werden. In diesem Fall erstellt und verwaltet der Elternteil oder Vormund das Konto.</p>
+    <p>Mit der Kontoerstellung bestätigen Sie, mindestens 16 Jahre alt zu sein, oder dass ein Elternteil oder Vormund diese Bedingungen akzeptiert und ausdrücklich zugestimmt hat.</p>
+
+    <h2>10. Datensicherheit</h2>
+    <p>Alle Daten werden per TLS/HTTPS verschlüsselt übertragen. Firebase stellt Verschlüsselung im Ruhezustand bereit. Der Datenzugang ist durch Firebase-Sicherheitsregeln und Cloud Functions auf authentifizierte Nutzer beschränkt.</p>
+
+    <h2>11. Änderungen dieser Richtlinie</h2>
+    <p>Wir können diese Datenschutzrichtlinie aktualisieren. Wesentliche Änderungen werden in der App mitgeteilt. Das Datum oben auf dieser Seite zeigt die letzte Überarbeitung.</p>
+
+    <div class="contact-box">
+      <strong>Kontakt</strong><br>
+      Muny Roth CHEV<br>c/o MDC#1006, Welserstraße 3, 87463 Dietmannsried, Deutschland<br>
+      <a href="mailto:contact@munyroth.com">contact@munyroth.com</a>
+    </div>
   </div>
 
   <footer>© 2026 Muny Roth CHEV · ViviTap</footer>
 </div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('content-' + lang).classList.add('active');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      if (btn.textContent === lang.toUpperCase()) btn.classList.add('active');
+    });
+    const dates = { en: 'Last updated: June 2026', fr: 'Dernière mise à jour : juin 2026', de: 'Letzte Aktualisierung: Juni 2026' };
+    document.getElementById('header-date').textContent = dates[lang];
+  }
+
+  const urlLang = new URLSearchParams(window.location.search).get('lang');
+  if (urlLang && ['en','fr','de'].includes(urlLang)) setLang(urlLang);
+</script>
 </body>
 </html>

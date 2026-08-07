@@ -34,7 +34,7 @@
 <div class="container">
   <header>
     <h1>ViviTap – Privacy Policy</h1>
-    <p id="header-date">Last updated: June 2026</p>
+    <p id="header-date">Last updated: August 2026</p>
   </header>
 
   <nav>
@@ -68,20 +68,21 @@
     <ul>
       <li>Messages sent and received between connected users (last 50 messages per contact, stored in Firestore)</li>
       <li>Custom communication buttons (text, emoji, optional image)</li>
+      <li>Voice recordings attached to communication buttons, recorded in the app to replace synthesised speech (audio files, stored in Firebase Storage)</li>
+      <li>Voice messages recorded by a helper and played on the helpee's device (audio files, stored in Firebase Storage)</li>
+      <li>Delivery status of messages, including whether a message has been heard by the recipient and when</li>
       <li>Button usage statistics (frequency of use per button)</li>
     </ul>
     <h3>2.3 Technical Data</h3>
     <ul>
       <li>Firebase Cloud Messaging (FCM) push token for notifications</li>
+      <li>Microphone access, requested only when you start a recording. ViviTap never records in the background: recording begins when you tap the record button and stops when you release it or when the time limit is reached.</li>
+      <li>Last activity timestamp, used to show your connected contacts whether you are currently using the app</li>
       <li>App preferences: language, grid layout, dark mode, audio volume, send method</li>
       <li>Connection list (usernames of connected caregivers/users)</li>
       <li>Crash reports and anonymized diagnostic data (Firebase Crashlytics)</li>
     </ul>
-    <h3>2.4 Call Data (coming in a future version)</h3>
-    <ul>
-      <li>Audio and video call functionality is planned for a future version and is not currently available to users. When activated, call logs (caller/callee username, channel name, call status) will be stored temporarily and audio/video streams will be processed in real time via LiveKit without being stored by ViviTap.</li>
-    </ul>
-    <h3>2.5 Subscription Data</h3>
+    <h3>2.4 Subscription Data</h3>
     <ul>
       <li>Subscription status and plan (free, Family, Pro)</li>
       <li>Purchase history managed by RevenueCat</li>
@@ -92,6 +93,8 @@
     <ul>
       <li>To provide core app functionality: sending messages, communication buttons, managing contacts</li>
       <li>To deliver push notifications for incoming messages</li>
+      <li>To store and play back voice recordings: button recordings on the device that plays them, voice messages on the recipient’s device</li>
+      <li>To show the sender whether a message has been heard, and to show connected contacts whether you are currently using the app</li>
       <li>To restore your preferences across sessions</li>
       <li>To manage subscriptions and enforce plan limits</li>
       <li>To monitor app stability and fix crashes</li>
@@ -106,22 +109,22 @@
       <li>Art. 6(1)(f) — Legitimate interest: security, fraud prevention, app stability</li>
     </ul>
     <p>Regarding health-related data: the use of a communication assistance application may implicitly reveal a communication disability. This constitutes special category data under GDPR Art. 9. We process this data solely to provide the app's core services, based on <strong>explicit consent given at registration (Art. 9(2)(a))</strong>. This explicit consent is collected through a dedicated consent screen at registration, where users must actively check three separate boxes: (1) acceptance of the Terms of Service and Privacy Policy, (2) acknowledgement that ViviTap may process data relating to their health or disability situation, and (3) confirmation of age eligibility. The consent record, including timestamp and version of the documents presented, is stored securely and associated with the user's account.</p>
+    <p>Voice recordings warrant particular mention. A recording of someone's voice may reveal a speech or communication impairment far more directly than written text does. Such recordings fall under the same explicit consent and are used for one purpose only: playing the message back to the recipient it was addressed to. We do not analyse them, transcribe them, or use them to identify anyone. Recording is always initiated by the user, never automatically.</p>
 
     <h2>5. Third-Party Services</h2>
     <h3>5.1 Firebase (Google LLC)</h3>
     <p>We use Firebase Authentication, Firestore, Firebase Storage, Firebase Cloud Messaging, and Firebase Crashlytics. User data (Firestore, Storage) is stored on servers located in <strong>europe-west3 (Frankfurt, Germany)</strong>. Cloud Functions are deployed in europe-west1 (Belgium) and process data transiently without storing it. Crash reports may contain device type, OS version, and anonymized stack traces. More information: <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></p>
     <h3>5.2 Google Sign-In (Google LLC)</h3>
     <p>If you choose to sign in with Google, your Google account email address and a Google-issued identifier are used solely for authentication purposes. More information: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></p>
-    <h3>5.3 LiveKit (LiveKit Inc.)</h3>
-    <p>We use LiveKit for real-time audio and video calls. Audio and video streams are not recorded or stored by ViviTap. LiveKit may process connection metadata (IP address, connection timestamps) for the duration of the call. LiveKit applies Standard Contractual Clauses (SCCs) for EU data transfers. More information: <a href="https://livekit.io/privacy-policy" target="_blank">livekit.io/privacy-policy</a></p>
-    <h3>5.4 RevenueCat (RevenueCat Inc.)</h3>
+    <h3>5.3 RevenueCat (RevenueCat Inc.)</h3>
     <p>We use RevenueCat to manage in-app subscriptions. RevenueCat processes your subscription status, purchase history, and an anonymized user identifier. Payments are handled by Google Play. RevenueCat applies SCCs for EU data transfers. More information: <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a></p>
 
     <h2>6. Data Retention</h2>
     <ul>
       <li>Account data: retained as long as the account is active</li>
       <li>Messages: last 50 messages per contact; deleted when either user deletes their account</li>
-      <li>Call logs: not applicable currently (feature coming in a future version)</li>
+      <li>Voice messages: deleted together with the message they belong to, under the same limit of 50 messages per contact. Files left behind by an interrupted upload, which no message refers to, are removed automatically within one year at most.</li>
+      <li>Button voice recordings: retained as long as the button exists; deleted when you delete the button or your account</li>
       <li>Push tokens: deleted upon account deletion</li>
       <li>Crash reports: retained by Firebase Crashlytics for up to 90 days</li>
       <li>Consent records: retained for the duration of the account plus 3 years after deletion (GDPR Art. 7)</li>
@@ -135,7 +138,7 @@
     <p>You may also lodge a complaint with: <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank">LfDI Baden-Württemberg</a></p>
 
     <h2>8. International Data Transfers</h2>
-    <p>Some third-party services (LiveKit, RevenueCat) may transfer data outside the EU. All such transfers are covered by Standard Contractual Clauses (SCCs) approved by the European Commission.</p>
+    <p>One third-party service (RevenueCat) may transfer data outside the EU. Such transfers are covered by Standard Contractual Clauses (SCCs) approved by the European Commission.</p>
 
     <h2>9. Minors</h2>
     <p>ViviTap is not a children's app, but it may be used by individuals under 16 years of age — including people with communication disabilities — under the supervision and with the explicit consent of a parent or legal guardian. In such cases, the parent or guardian creates and manages the account and is responsible for ensuring appropriate use.</p>
@@ -173,20 +176,21 @@
     <ul>
       <li>Messages envoyés et reçus (50 derniers messages par contact, stockés dans Firestore)</li>
       <li>Boutons de communication personnalisés (texte, emoji, image optionnelle)</li>
+      <li>Enregistrements vocaux associés aux boutons de communication, enregistrés dans l'application pour remplacer la voix de synthèse (fichiers audio, stockés dans Firebase Storage)</li>
+      <li>Messages vocaux enregistrés par un aidant et joués sur l'appareil de la personne aidée (fichiers audio, stockés dans Firebase Storage)</li>
+      <li>Statut de remise des messages, notamment le fait qu'un message a été entendu par son destinataire et à quel moment</li>
       <li>Statistiques d'utilisation des boutons</li>
     </ul>
     <h3>2.3 Données techniques</h3>
     <ul>
       <li>Token push FCM pour les notifications</li>
+      <li>Accès au microphone, demandé uniquement au moment où vous lancez un enregistrement. ViviTap n'enregistre jamais en arrière-plan : l'enregistrement démarre lorsque vous appuyez sur le bouton prévu à cet effet et s'arrête lorsque vous le relâchez ou que la durée maximale est atteinte.</li>
+      <li>Horodatage de dernière activité, utilisé pour indiquer à vos contacts si vous utilisez l'application en ce moment</li>
       <li>Préférences : langue, disposition de la grille, mode sombre, volume, méthode d'envoi</li>
       <li>Liste de connexions (identifiants des contacts)</li>
       <li>Rapports de crash anonymisés (Firebase Crashlytics)</li>
     </ul>
-    <h3>2.4 Données d'appels (fonctionnalité à venir)</h3>
-    <ul>
-      <li>La fonction d'appels audio/vidéo est prévue pour une version future et n'est pas encore disponible. Lorsqu'elle sera activée, des logs d'appels temporaires (identifiants, nom du canal, statut) seront stockés et les flux audio/vidéo seront traités en temps réel via LiveKit sans être stockés par ViviTap.</li>
-    </ul>
-    <h3>2.5 Données d'abonnement</h3>
+    <h3>2.4 Données d'abonnement</h3>
     <ul>
       <li>Statut d'abonnement (Gratuit, Famille, Pro)</li>
       <li>Historique d'achats géré par RevenueCat</li>
@@ -197,6 +201,8 @@
     <ul>
       <li>Fonctionnalités principales : messages, boutons de communication, gestion des contacts</li>
       <li>Notifications push pour messages entrants</li>
+      <li>Stockage et lecture des enregistrements vocaux : clips de boutons sur l’appareil qui les joue, messages vocaux sur l’appareil du destinataire</li>
+      <li>Indiquer à l’expéditeur si son message a été entendu, et à vos contacts si vous utilisez l’application en ce moment</li>
       <li>Restauration des préférences</li>
       <li>Gestion des abonnements et limites</li>
       <li>Stabilité de l'application</li>
@@ -211,22 +217,22 @@
       <li>Art. 6(1)(f) — Intérêt légitime : sécurité, stabilité</li>
     </ul>
     <p>Concernant les données de santé : l'utilisation d'une application d'aide à la communication peut implicitement révéler un handicap de communication. Ces données relèvent de l'Art. 9 RGPD (données de catégorie spéciale). Nous les traitons uniquement pour fournir les services de base, sur la base d'un <strong>consentement explicite donné à l'inscription (Art. 9(2)(a))</strong>. Ce consentement est recueilli via un écran dédié avec trois cases à cocher : (1) acceptation des CGU et de la présente politique, (2) reconnaissance du traitement des données liées au handicap, (3) confirmation de l'âge. L'enregistrement du consentement (horodatage, version des documents) est conservé de manière sécurisée.</p>
+    <p>Les enregistrements vocaux méritent une mention particulière. L'enregistrement de la voix d'une personne peut révéler un trouble de la parole ou de la communication bien plus directement qu'un texte écrit. Ces enregistrements relèvent du même consentement explicite et servent à une seule fin : jouer le message au destinataire auquel il était adressé. Nous ne les analysons pas, ne les transcrivons pas et ne les utilisons pas pour identifier qui que ce soit. Un enregistrement est toujours déclenché par l'utilisateur, jamais automatiquement.</p>
 
     <h2>5. Services tiers</h2>
     <h3>5.1 Firebase (Google LLC)</h3>
     <p>Authentification, base de données, stockage, notifications, crash reporting. Données stockées en <strong>europe-west3 (Francfort, Allemagne)</strong>. Cloud Functions en europe-west1 (Belgique). <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></p>
     <h3>5.2 Google Sign-In (Google LLC)</h3>
     <p>Si vous choisissez la connexion Google, votre email et identifiant Google sont utilisés uniquement pour l'authentification. <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></p>
-    <h3>5.3 LiveKit (LiveKit Inc.) — fonctionnalité à venir</h3>
-    <p>LiveKit est intégré en prévision d'une fonctionnalité d'appels audio/vidéo disponible dans une version future. Cette fonctionnalité n'est pas encore active. Lorsqu'elle le sera, les flux ne seront pas enregistrés par ViviTap et LiveKit appliquera les SCCs. <a href="https://livekit.io/privacy-policy" target="_blank">livekit.io/privacy-policy</a></p>
-    <h3>5.4 RevenueCat (RevenueCat Inc.)</h3>
+    <h3>5.3 RevenueCat (RevenueCat Inc.)</h3>
     <p>Gestion des abonnements. RevenueCat traite le statut d'abonnement, l'historique d'achats et un identifiant anonymisé. Les paiements sont gérés par Google Play. SCCs applicables. <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a></p>
 
     <h2>6. Conservation des données</h2>
     <ul>
       <li>Données de compte : conservées tant que le compte est actif</li>
       <li>Messages : 50 derniers par contact ; supprimés si l'un des deux utilisateurs supprime son compte</li>
-      <li>Logs d'appels : non applicables actuellement (fonctionnalité à venir)</li>
+      <li>Messages vocaux : supprimés en même temps que le message auquel ils appartiennent, dans la même limite de 50 messages par contact. Les fichiers laissés par un envoi interrompu, auxquels aucun message ne renvoie, sont supprimés automatiquement sous un an au maximum.</li>
+      <li>Enregistrements vocaux des boutons : conservés aussi longtemps que le bouton existe ; supprimés lorsque vous supprimez le bouton ou votre compte</li>
       <li>Tokens push : supprimés à la suppression du compte</li>
       <li>Rapports de crash : 90 jours (politique Firebase Crashlytics)</li>
       <li>Enregistrements de consentement : durée du compte + 3 ans après suppression (Art. 7 RGPD)</li>
@@ -240,7 +246,7 @@
     <p>Vous pouvez également déposer une plainte auprès du : <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank">LfDI Baden-Württemberg</a></p>
 
     <h2>8. Transferts internationaux</h2>
-    <p>Certains services tiers (LiveKit, RevenueCat) peuvent transférer des données hors de l'UE. Tous ces transferts sont couverts par des clauses contractuelles types (CCT) approuvées par la Commission européenne.</p>
+    <p>Un service tiers (RevenueCat) peut transférer des données hors de l'UE. Ces transferts sont couverts par des clauses contractuelles types (CCT) approuvées par la Commission européenne.</p>
 
     <h2>9. Mineurs</h2>
     <p>ViviTap n'est pas une application pour enfants, mais elle peut être utilisée par des personnes de moins de 16 ans — notamment des personnes ayant des difficultés de communication — sous la supervision et avec le consentement explicite d'un parent ou tuteur légal. Dans ce cas, le parent ou tuteur crée et gère le compte et est responsable de l'utilisation appropriée de l'application.</p>
@@ -278,20 +284,21 @@
     <ul>
       <li>Gesendete und empfangene Nachrichten (letzte 50 pro Kontakt, in Firestore gespeichert)</li>
       <li>Benutzerdefinierte Kommunikationsschaltflächen (Text, Emoji, optionales Bild)</li>
+      <li>Sprachaufnahmen, die einer Kommunikationsschaltfläche zugeordnet sind und in der App aufgenommen wurden, um die synthetische Sprachausgabe zu ersetzen (Audiodateien, in Firebase Storage gespeichert)</li>
+      <li>Sprachnachrichten, die von einem Betreuer aufgenommen und auf dem Gerät des Betreuten abgespielt werden (Audiodateien, in Firebase Storage gespeichert)</li>
+      <li>Zustellstatus der Nachrichten, insbesondere ob und wann eine Nachricht vom Empfänger gehört wurde</li>
       <li>Nutzungsstatistiken der Schaltflächen</li>
     </ul>
     <h3>2.3 Technische Daten</h3>
     <ul>
       <li>FCM-Push-Token für Benachrichtigungen</li>
+      <li>Mikrofonzugriff, der nur angefragt wird, wenn Sie eine Aufnahme starten. ViviTap nimmt niemals im Hintergrund auf: Die Aufnahme beginnt, wenn Sie die Aufnahmetaste betätigen, und endet, wenn Sie sie loslassen oder die Höchstdauer erreicht ist.</li>
+      <li>Zeitstempel der letzten Aktivität, mit dem Ihren verbundenen Kontakten angezeigt wird, ob Sie die App gerade nutzen</li>
       <li>App-Einstellungen: Sprache, Rasterlayout, Dunkelmodus, Lautstärke, Sendemethode</li>
       <li>Verbindungsliste (Benutzernamen der verbundenen Kontakte)</li>
       <li>Anonymisierte Absturzberichte (Firebase Crashlytics)</li>
     </ul>
-    <h3>2.4 Anrufdaten (zukünftige Funktion)</h3>
-    <ul>
-      <li>Die Audio-/Videoanruffunktion ist für eine zukünftige Version geplant und derzeit nicht verfügbar. Wenn sie aktiviert wird, werden temporäre Anrufprotokolle gespeichert und Streams in Echtzeit über LiveKit verarbeitet, ohne von ViviTap gespeichert zu werden.</li>
-    </ul>
-    <h3>2.5 Abonnementdaten</h3>
+    <h3>2.4 Abonnementdaten</h3>
     <ul>
       <li>Abonnementstatus (Kostenlos, Familie, Pro)</li>
       <li>Kaufhistorie verwaltet von RevenueCat</li>
@@ -302,6 +309,8 @@
     <ul>
       <li>Bereitstellung der App-Kernfunktionen: Nachrichten, Kommunikationsschaltflächen, Kontaktverwaltung</li>
       <li>Push-Benachrichtigungen für eingehende Nachrichten</li>
+      <li>Speicherung und Wiedergabe von Sprachaufnahmen: Schaltflächenaufnahmen auf dem Gerät, das sie abspielt, Sprachnachrichten auf dem Gerät des Empfängers</li>
+      <li>Dem Absender anzeigen, ob seine Nachricht gehört wurde, und Ihren Kontakten, ob Sie die App gerade nutzen</li>
       <li>Wiederherstellung Ihrer Einstellungen</li>
       <li>Verwaltung von Abonnements und Nutzungsgrenzen</li>
       <li>App-Stabilität und Fehlerbehebung</li>
@@ -316,22 +325,22 @@
       <li>Art. 6(1)(f) — Berechtigte Interessen: Sicherheit, Stabilität</li>
     </ul>
     <p>Zu gesundheitsbezogenen Daten: Die Nutzung einer Kommunikationshilfe-App kann implizit eine Kommunikationseinschränkung offenbaren. Diese Daten fallen unter Art. 9 DSGVO (besondere Kategorien). Wir verarbeiten sie ausschließlich zur Erbringung der Kerndienste, auf Basis einer <strong>ausdrücklichen Einwilligung bei der Registrierung (Art. 9(2)(a))</strong>. Diese wird über einen dedizierten Einwilligungsbildschirm eingeholt, auf dem drei Kästchen aktiv angekreuzt werden müssen: (1) Akzeptanz der AGB und dieser Richtlinie, (2) Bestätigung der Verarbeitung behinderungsbezogener Daten, (3) Altersbestätigung. Der Einwilligungsnachweis wird sicher gespeichert.</p>
+    <p>Sprachaufnahmen verdienen eine besondere Erwähnung. Die Aufnahme der Stimme einer Person kann eine Sprech- oder Kommunikationsbeeinträchtigung weit unmittelbarer offenbaren als geschriebener Text. Solche Aufnahmen unterliegen derselben ausdrücklichen Einwilligung und dienen einem einzigen Zweck: der Wiedergabe der Nachricht für den Empfänger, an den sie gerichtet war. Wir analysieren sie nicht, transkribieren sie nicht und verwenden sie nicht zur Identifizierung von Personen. Eine Aufnahme wird stets von der Nutzerin oder dem Nutzer ausgelöst, niemals automatisch.</p>
 
     <h2>5. Drittanbieter</h2>
     <h3>5.1 Firebase (Google LLC)</h3>
     <p>Authentifizierung, Datenbank, Speicher, Benachrichtigungen, Absturzberichte. Nutzerdaten gespeichert in <strong>europe-west3 (Frankfurt, Deutschland)</strong>. Cloud Functions in europe-west1 (Belgien). <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></p>
     <h3>5.2 Google Sign-In (Google LLC)</h3>
     <p>Bei Google-Anmeldung werden E-Mail und Google-Identifikator ausschließlich zur Authentifizierung verwendet. <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></p>
-    <h3>5.3 LiveKit (LiveKit Inc.) — zukünftige Funktion</h3>
-    <p>LiveKit ist für eine zukünftige Audio-/Videoanruffunktion integriert, die derzeit nicht aktiv ist. Wenn sie aktiviert wird, werden Streams nicht von ViviTap gespeichert und SCCs gelten. <a href="https://livekit.io/privacy-policy" target="_blank">livekit.io/privacy-policy</a></p>
-    <h3>5.4 RevenueCat (RevenueCat Inc.)</h3>
+    <h3>5.3 RevenueCat (RevenueCat Inc.)</h3>
     <p>Abonnementverwaltung. RevenueCat verarbeitet Abonnementstatus, Kaufhistorie und eine anonymisierte Nutzer-ID. Zahlungen erfolgen über Google Play. SCCs gelten. <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a></p>
 
     <h2>6. Datenspeicherung</h2>
     <ul>
       <li>Kontodaten: bis zur Kontolöschung</li>
       <li>Nachrichten: letzte 50 pro Kontakt; gelöscht wenn ein Nutzer sein Konto löscht</li>
-      <li>Anrufprotokolle: derzeit nicht anwendbar (zukünftige Funktion)</li>
+      <li>Sprachnachrichten: werden zusammen mit der zugehörigen Nachricht gelöscht, im selben Rahmen von 50 Nachrichten pro Kontakt. Dateien aus einem abgebrochenen Upload, auf die keine Nachricht verweist, werden automatisch innerhalb von höchstens einem Jahr entfernt.</li>
+      <li>Sprachaufnahmen von Schaltflächen: bleiben erhalten, solange die Schaltfläche besteht; gelöscht, wenn Sie die Schaltfläche oder Ihr Konto löschen</li>
       <li>Push-Token: bei Kontolöschung gelöscht</li>
       <li>Absturzberichte: bis zu 90 Tage (Firebase Crashlytics)</li>
       <li>Einwilligungsnachweise: Kontolaufzeit + 3 Jahre nach Löschung (DSGVO Art. 7)</li>
@@ -345,7 +354,7 @@
     <p>Sie können auch Beschwerde einlegen beim: <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank">LfDI Baden-Württemberg</a></p>
 
     <h2>8. Internationale Datenübermittlungen</h2>
-    <p>Einige Drittanbieter (LiveKit, RevenueCat) können Daten außerhalb der EU übermitteln. Alle Übermittlungen sind durch von der EU-Kommission genehmigte Standardvertragsklauseln (SCC) abgesichert.</p>
+    <p>Ein Drittanbieter (RevenueCat) kann Daten außerhalb der EU übermitteln. Diese Übermittlungen sind durch von der EU-Kommission genehmigte Standardvertragsklauseln (SCC) abgesichert.</p>
 
     <h2>9. Minderjährige</h2>
     <p>ViviTap ist keine Kinder-App, kann aber von Personen unter 16 Jahren — einschließlich Menschen mit Kommunikationseinschränkungen — unter Aufsicht und mit ausdrücklicher Einwilligung eines Elternteils oder gesetzlichen Vormunds genutzt werden. In diesem Fall erstellt und verwaltet der Elternteil oder Vormund das Konto.</p>
@@ -375,7 +384,7 @@
     document.querySelectorAll('.lang-btn').forEach(btn => {
       if (btn.textContent === lang.toUpperCase()) btn.classList.add('active');
     });
-    const dates = { en: 'Last updated: June 2026', fr: 'Dernière mise à jour : juin 2026', de: 'Letzte Aktualisierung: Juni 2026' };
+    const dates = { en: 'Last updated: August 2026', fr: 'Dernière mise à jour : août 2026', de: 'Letzte Aktualisierung: August 2026' };
     document.getElementById('header-date').textContent = dates[lang];
   }
 

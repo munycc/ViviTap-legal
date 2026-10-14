@@ -40,7 +40,7 @@
 <div class="container">
   <header>
     <h1>ViviTap – Delete Account &amp; Data</h1>
-    <p id="header-date">Last updated: July 2026</p>
+    <p id="header-date">Last updated: October 2026</p>
   </header>
 
   <nav>
@@ -82,6 +82,9 @@
       <tr><td>Custom communication buttons &amp; images</td><td>Permanently deleted</td></tr>
       <tr><td>Connections (helper/helpee links)</td><td>Removed from both accounts</td></tr>
       <tr><td>Push notification token (FCM)</td><td>Permanently deleted</td></tr>
+      <tr><td>Voice recordings of communication buttons</td><td>Permanently deleted</td></tr>
+      <tr><td>Voice messages</td><td>Deleted together with the messages. Audio files no longer linked to any message are removed automatically within one year at most</td></tr>
+      <tr><td>Call records and call-minute counter</td><td>Permanently deleted</td></tr>
       <tr><td>App preferences (language, layout, dark mode, volume)</td><td>Permanently deleted</td></tr>
     </table>
 
@@ -91,8 +94,9 @@
       <tr><td>Consent records (timestamp, document version, checkboxes accepted at registration)</td><td>Account lifetime + 3 years</td><td>Legal obligation to prove consent was given (GDPR Art. 7)</td></tr>
       <tr><td>Subscription / purchase history</td><td>Per RevenueCat's own legal and tax retention obligations</td><td>Accounting and tax law requirements of our payment processor</td></tr>
       <tr><td>Crash reports</td><td>Up to 90 days (Firebase Crashlytics policy)</td><td>Anonymized diagnostic data; no personal identifier is intentionally included</td></tr>
+      <tr><td>Technical call session data held by LiveKit (an opaque identifier only, never any audio)</td><td>Per LiveKit's Data Processing Addendum</td><td>Operation and security of the call service by our processor</td></tr>
     </table>
-    <p>No health-related or communication data is retained after account deletion.</p>
+    <p>Apart from voice message files awaiting automatic removal (see above), no health-related or communication data is retained after account deletion.</p>
 
     <h2>5. Questions</h2>
     <div class="contact-box">
@@ -128,6 +132,9 @@
       <tr><td>Boutons de communication personnalisés et images</td><td>Supprimés définitivement</td></tr>
       <tr><td>Connexions (liens aidé/aidant)</td><td>Retirées des deux comptes</td></tr>
       <tr><td>Token de notification push (FCM)</td><td>Supprimé définitivement</td></tr>
+      <tr><td>Enregistrements vocaux des boutons de communication</td><td>Supprimés définitivement</td></tr>
+      <tr><td>Messages vocaux</td><td>Supprimés avec les messages. Les fichiers audio qui ne sont plus reliés à aucun message sont effacés automatiquement sous un an au plus</td></tr>
+      <tr><td>Traces d'appel et compteur de minutes d'appel</td><td>Supprimés définitivement</td></tr>
       <tr><td>Préférences (langue, disposition, mode sombre, volume)</td><td>Supprimées définitivement</td></tr>
     </table>
 
@@ -137,8 +144,9 @@
       <tr><td>Enregistrement du consentement (horodatage, version des documents, cases cochées à l'inscription)</td><td>Durée du compte + 3 ans</td><td>Obligation légale de preuve du consentement (Art. 7 RGPD)</td></tr>
       <tr><td>Historique d'abonnement / achats</td><td>Selon les obligations légales et fiscales de RevenueCat</td><td>Exigences comptables et fiscales de notre prestataire de paiement</td></tr>
       <tr><td>Rapports de crash</td><td>Jusqu'à 90 jours (politique Firebase Crashlytics)</td><td>Données de diagnostic anonymisées ; aucun identifiant personnel n'est intentionnellement inclus</td></tr>
+      <tr><td>Données techniques de session d'appel chez LiveKit (identifiant opaque uniquement, jamais de son)</td><td>Selon le DPA de LiveKit</td><td>Fonctionnement et sécurité du service d'appel par notre sous-traitant</td></tr>
     </table>
-    <p>Aucune donnée de santé ou de communication n'est conservée après suppression du compte.</p>
+    <p>Hormis les fichiers de messages vocaux en attente d'effacement automatique (voir plus haut), aucune donnée de santé ou de communication n'est conservée après suppression du compte.</p>
 
     <h2>5. Questions</h2>
     <div class="contact-box">
@@ -174,6 +182,9 @@
       <tr><td>Benutzerdefinierte Kommunikationsschaltflächen und Bilder</td><td>Dauerhaft gelöscht</td></tr>
       <tr><td>Verbindungen (Betreuer/Betreuter-Links)</td><td>Aus beiden Konten entfernt</td></tr>
       <tr><td>Push-Benachrichtigungs-Token (FCM)</td><td>Dauerhaft gelöscht</td></tr>
+      <tr><td>Sprachaufnahmen der Kommunikationsschaltflächen</td><td>Dauerhaft gelöscht</td></tr>
+      <tr><td>Sprachnachrichten</td><td>Zusammen mit den Nachrichten gelöscht. Audiodateien, die mit keiner Nachricht mehr verknüpft sind, werden automatisch innerhalb von höchstens einem Jahr entfernt</td></tr>
+      <tr><td>Anrufdatensätze und Zähler der Anrufminuten</td><td>Dauerhaft gelöscht</td></tr>
       <tr><td>App-Einstellungen (Sprache, Layout, Dunkelmodus, Lautstärke)</td><td>Dauerhaft gelöscht</td></tr>
     </table>
 
@@ -183,8 +194,9 @@
       <tr><td>Einwilligungsnachweis (Zeitstempel, Dokumentversion, bei der Registrierung akzeptierte Kästchen)</td><td>Kontolaufzeit + 3 Jahre</td><td>Gesetzliche Nachweispflicht der Einwilligung (Art. 7 DSGVO)</td></tr>
       <tr><td>Abonnement-/Kaufhistorie</td><td>Gemäß den eigenen gesetzlichen und steuerlichen Pflichten von RevenueCat</td><td>Buchhaltungs- und steuerrechtliche Anforderungen unseres Zahlungsdienstleisters</td></tr>
       <tr><td>Absturzberichte</td><td>Bis zu 90 Tage (Firebase-Crashlytics-Richtlinie)</td><td>Anonymisierte Diagnosedaten; kein personenbezogener Identifikator wird absichtlich einbezogen</td></tr>
+      <tr><td>Technische Anrufsitzungsdaten bei LiveKit (nur eine nicht sprechende Kennung, niemals Ton)</td><td>Gemäß dem Auftragsverarbeitungsvertrag von LiveKit</td><td>Betrieb und Sicherheit des Anrufdienstes durch unseren Auftragsverarbeiter</td></tr>
     </table>
-    <p>Nach der Kontolöschung werden keine gesundheits- oder kommunikationsbezogenen Daten aufbewahrt.</p>
+    <p>Abgesehen von Sprachnachrichtendateien, die auf ihre automatische Löschung warten (siehe oben), werden nach der Kontolöschung keine gesundheits- oder kommunikationsbezogenen Daten aufbewahrt.</p>
 
     <h2>5. Fragen</h2>
     <div class="contact-box">
@@ -205,7 +217,7 @@
     document.querySelectorAll('.lang-btn').forEach(btn => {
       if (btn.textContent === lang.toUpperCase()) btn.classList.add('active');
     });
-    const dates = { en: 'Last updated: July 2026', fr: 'Dernière mise à jour : juillet 2026', de: 'Letzte Aktualisierung: Juli 2026' };
+    const dates = { en: 'Last updated: October 2026', fr: 'Dernière mise à jour : octobre 2026', de: 'Letzte Aktualisierung: Oktober 2026' };
     document.getElementById('header-date').textContent = dates[lang];
   }
 
